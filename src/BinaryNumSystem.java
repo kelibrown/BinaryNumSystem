@@ -73,6 +73,7 @@ public class BinaryNumSystem {
             System.out.println(5 % 2);
 
 
+
             /*
             if (decimal % 2 == 0) {
                 System.out.print(0);
