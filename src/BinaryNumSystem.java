@@ -55,7 +55,7 @@ public class BinaryNumSystem {
     public static void decToBinary(String binNum, int[] array) {
         //not permanent, practicing out the logic
 
-        double decimal = 25;
+        int decimal = 25;
         System.out.println("\n\ndecimal form: " + decimal);
 
         /**
@@ -64,13 +64,14 @@ public class BinaryNumSystem {
          * not exact but i know where i'm going
          */
 
-       // while (decimal > 0) {
+       while (decimal > 0) {
             decimal = decimal / 2;
-            System.out.println(decimal);
-            System.out.println(decimal % 2);
+           System.out.println(decimal);
+           // System.out.println(decimal % 2);
 
             //sort of forgot how modulus works, we can test out some values to confirm my assumptions
-            System.out.println(5 % 2);
+            //System.out.println(5 % 2);
+           // System.out.println(10 % 2);
 
 
 
@@ -84,7 +85,7 @@ public class BinaryNumSystem {
             System.out.println(decimal);
 
              */
-      /*  }*/
+       }
 
 
     }
