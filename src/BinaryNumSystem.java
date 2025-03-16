@@ -61,13 +61,18 @@ public class BinaryNumSystem {
         /**
          * try dropping and collecting the decimal by initializing 'decimal' as a double.
          * if 'decinal' is a double, we type cast it to an int and add a 1
-         * not exact but i know where i'm going
+         * not exact but i think i know where i'm going
          */
 
+        String binValue = "";
+        int remainder;
+
+
        while (decimal > 0) {
-            decimal = decimal / 2;
-            int remainder = decimal % 2;
-           System.out.print(remainder);
+               remainder = decimal % 2;
+               binValue = remainder + binValue;
+               decimal = decimal / 2;
+
            // System.out.println(decimal % 2);
 
             //sort of forgot how modulus works, we can test out some values to confirm my assumptions
@@ -87,7 +92,7 @@ public class BinaryNumSystem {
 
              */
        }
-
+        System.out.print(binValue);
 
     }
 }
