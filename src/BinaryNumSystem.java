@@ -66,7 +66,8 @@ public class BinaryNumSystem {
 
        while (decimal > 0) {
             decimal = decimal / 2;
-           System.out.println(decimal);
+            int remainder = decimal % 2;
+           System.out.print(remainder);
            // System.out.println(decimal % 2);
 
             //sort of forgot how modulus works, we can test out some values to confirm my assumptions
