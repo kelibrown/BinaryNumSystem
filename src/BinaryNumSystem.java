@@ -15,6 +15,7 @@ public class BinaryNumSystem {
 
         /**
          * find length of string using .length method (embedded within java)
+         * why do we need to find the length?
          */
 
         int size = binNum.length();
@@ -52,6 +53,11 @@ public class BinaryNumSystem {
      * 4. make sure these bits are **concatenated (not added!) backwards.
      */
 
+    /**
+     * steps have changed a bit. write appropriate comment here.
+     * @param binNum
+     * @param array
+     */
     public static void decToBinary(String binNum, int[] array) {
         //not permanent, practicing out the logic
 
@@ -95,4 +101,36 @@ public class BinaryNumSystem {
         System.out.print(binValue);
 
     }
+
+    /**
+     * the gist of how binary is converted to decimal is...
+     * we will parse (go through) the decimal value
+     * for each place, we will multiply it by 2^position
+     * note: we start from the last place to the first, and we start with 2^0
+     */
+
+    /**
+     * don't worry about user input or storing the right amount of value places just yet
+     */
+
+    public static void BinToDecimal() {
+        int binary = 11001; // 25 in decimal, we'll eventually want to write this as 00011001.
+
+        /**
+         * scratch previous notes, to parse we may have to store the number in an array right away
+         */
+
+
+
+    }
+
+    public static int[] intToArray(int binary) {
+        int[] array = new int[8];
+        // if array location is empty enter zero?
+
+
+
+
+    }
+
 }
