@@ -1,3 +1,11 @@
+/**
+ * notes for next review:
+
+ * program should be able to receive 0 to 255 in binary and decimal
+ * make sure the program loops (ex. if user enters invalid input, if they wanted to run program again)
+ *
+ */
+
 import java.util.Scanner;
 public class BinaryNumSystem {
     public static void main(String[] args) {
@@ -49,11 +57,19 @@ public class BinaryNumSystem {
                 System.out.println("invalid input! be sure that your input is a whole number. try again: ");
                 in.next(); // captures invalid input
             }
+
+
             //user's decimal input captured to be converted to binary
             //put check in place that assures user's input does not exceed 255
+
             int userDec = in.nextInt();
 
+            if(userDec >= 255) {
+                System.out.println("invalid input! you've entered a number greater than 255. try again: ");
+            } else {
+
             decToBinary(userDec);
+            }
         } else if (userChoice.equals("d")) {
             System.out.println("enter a binary number (in 8 bit, don't drop leading zeros");
             String userBin = in.next();
@@ -167,17 +183,6 @@ public class BinaryNumSystem {
             }
         }
     System.out.println(bConv);
-
-    }
-
-    //change return type to integer array
-    public static void intToArray(int binary) {
-        int[] array = new int[8];
-        // if array location is empty enter zero?
-
-
-
-
 
     }
 
