@@ -1,5 +1,5 @@
 /**
- * notes for next review:
+ * notes for next review/revision:
 
  * program should be able to receive 0 to 255 in binary and decimal
  * make sure the program loops (ex. if user enters invalid input, if they wanted to run program again)
@@ -23,6 +23,7 @@ public class BinaryNumSystem {
                 """);
 
         //THIS SHOULD BE A LOOP
+
         System.out.print("""
                 \n
                 MENU
@@ -40,42 +41,49 @@ public class BinaryNumSystem {
         String userChoice = in.next();
 
         if (userChoice.equals("b")) {
-            System.out.println(""" 
-                    don't be confused by the use of 'decimal'! 
-                    that's just the number system. input must be a whole number. 
-                    
-                    enter decimal number: """);
 
-            //check if user inputs a valid integer
+            int userDec;
+            while (true) {
+                System.out.println(""" 
+                        don't be confused by the use of 'decimal'! 
+                        that's just the number system. input must be a whole number. 
+                        
+                        enter decimal number: """);
+
+                //check if user inputs a valid integer
 
 
-            /**
-             * loop question above if user enters a non-whole number
-             **/
+                /**
+                 * loop question above if user enters a non-whole number
+                 **/
 
-            while(!in.hasNextInt()) {
-                System.out.println("invalid input! be sure that your input is a whole number. try again: ");
-                in.next(); // captures invalid input
+                if (!in.hasNextInt()) {
+                    System.out.println("invalid input! be sure that your input is a whole number. try again: ");
+                    in.next(); // captures invalid input
+                    continue;
+                }
+
+
+                //user's decimal input captured to be converted to binary
+                //put check in place that assures user's input does not exceed 255
+
+                userDec = in.nextInt();
+
+                if (userDec < 0 || userDec > 255) {
+                    System.out.println("invalid input! you've entered a number outside the range of 0-255. try again: ");
+                } else {
+                    break;
+                }
+
+
             }
-
-
-            //user's decimal input captured to be converted to binary
-            //put check in place that assures user's input does not exceed 255
-
-            int userDec = in.nextInt();
-
-            if(userDec >= 255) {
-                System.out.println("invalid input! you've entered a number greater than 255. try again: ");
-            } else {
-
             decToBinary(userDec);
-            }
         } else if (userChoice.equals("d")) {
             System.out.println("enter a binary number (in 8 bit, don't drop leading zeros");
             String userBin = in.next();
 
-            binToDecimal(userBin);
 
+            binToDecimal(userBin);
 
 
         } else {
@@ -83,6 +91,7 @@ public class BinaryNumSystem {
         }
 
     }
+
     // data type tbd
 
     /**
@@ -149,7 +158,7 @@ public class BinaryNumSystem {
          * instead of parsing like: 0 1 2 3 4 5 6 7 ---> we want to parse like this: 7 6 5 4 3 2 1
          */
 
-        //declare an array to hold 8 values
+        //declare an array to hold 8 places in binary (8-bits, up to 255 in decimal)
         int array[] = new int[8];
 
         /**
