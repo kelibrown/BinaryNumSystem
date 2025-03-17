@@ -1,5 +1,64 @@
+import java.util.Scanner;
 public class BinaryNumSystem {
     public static void main(String[] args) {
+
+        System.out.println("""
+                --------------------------------------------------------------------
+                | binary number system                                             |
+                | a program that acts as a simple binary representation of numbers.|
+                |                                                                  |
+                | to convert a number from binary to decimal, enter 'b'            |
+                | to convert a decimal number from decimal to binary, enter 'd'    |
+                |                                                                  |
+                | you can enter a number between 0 and 255.                        |
+                --------------------------------------------------------------------
+                """);
+
+        //THIS SHOULD BE A LOOP
+        System.out.print("""
+                \n
+                MENU
+                ----
+                converting binary to decimal? enter 'd'
+                converting decimal to binary? enter 'b'
+                
+                exiting the program? enter any other key.
+                -----------------------------------------
+                
+                your choice:  
+                """);
+
+        Scanner in = new Scanner(System.in);
+        String userChoice = in.next();
+
+        if (userChoice.equals("b")) {
+            System.out.println(""" 
+                    don't be confused by the use of 'decimal'! 
+                    that's just the number system. input must be a whole number. 
+                    
+                    enter decimal number: """);
+
+            //check if user inputs a valid integer
+
+
+            /**
+             * loop question above if user enters a non-whole number
+             **/
+
+            while(!in.hasNextInt()) {
+                System.out.println("invalid input! be sure that your input is a whole number. try again: ");
+                in.next(); // captures invalid input
+            }
+            //user's decimal input captured to be converted to binary
+            int userDec = in.nextInt();
+
+            decToBinary(userDec);
+        } else if (userChoice.equals("d")) {
+
+        } else {
+            System.out.println("exiting the program....");
+        }
+
         //25 in decimal
         String binNum = "00011001";
 
@@ -38,7 +97,6 @@ public class BinaryNumSystem {
             System.out.println(loc + "\t" + array[loc]);
         }
 
-        decToBinary(binNum, array);
     }
     // data type tbd
 
@@ -55,13 +113,11 @@ public class BinaryNumSystem {
 
     /**
      * steps have changed a bit. write appropriate comment here.
-     * @param binNum
-     * @param array
      */
-    public static void decToBinary(String binNum, int[] array) {
+    public static void decToBinary(int userDec) {
         //not permanent, practicing out the logic
 
-        int decimal = 25;
+        int decimal = userDec;
         System.out.println("\n\ndecimal form: " + decimal);
 
         /**
@@ -79,26 +135,8 @@ public class BinaryNumSystem {
                binValue = remainder + binValue;
                decimal = decimal / 2;
 
-           // System.out.println(decimal % 2);
-
-            //sort of forgot how modulus works, we can test out some values to confirm my assumptions
-            //System.out.println(5 % 2);
-           // System.out.println(10 % 2);
-
-
-
-            /*
-            if (decimal % 2 == 0) {
-                System.out.print(0);
-            } else if(decimal % 2 == 1) {
-                System.out.print(1);
-                decimal = (int) decimal;
-            }
-            System.out.println(decimal);
-
-             */
        }
-        System.out.print(binValue);
+        System.out.print(binValue + "\n");
 
     }
 
@@ -128,6 +166,7 @@ public class BinaryNumSystem {
     public static void intToArray(int binary) {
         int[] array = new int[8];
         // if array location is empty enter zero?
+
 
 
 
