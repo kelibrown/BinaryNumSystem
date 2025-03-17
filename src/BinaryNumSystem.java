@@ -124,7 +124,8 @@ public class BinaryNumSystem {
 
     }
 
-    public static int[] intToArray(int binary) {
+    //change return type to integer array
+    public static void intToArray(int binary) {
         int[] array = new int[8];
         // if array location is empty enter zero?
 
