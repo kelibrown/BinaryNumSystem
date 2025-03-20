@@ -58,7 +58,7 @@ public class BinaryNumSystem {
                  **/
 
                 if (!in.hasNextInt()) {
-                    System.out.println("invalid input! be sure that your input is a whole number. try again: ");
+                    System.out.println("invalid input! be sure that your input is a whole number. try again: \n");
                     in.next(); // captures invalid input
                     continue;
                 }
@@ -107,21 +107,21 @@ public class BinaryNumSystem {
     /**
      * steps have changed a bit. write appropriate comment here.
      */
+
+    /**
+     * PUT INTO AN ARRAY TO PAD ZEROS (MAKE BINARY NUMBER INTO 8-BIT)
+     * @param userDec
+     */
     public static void decToBinary(int userDec) {
         //not permanent, practicing out the logic
 
         int decimal = userDec;
         System.out.println("\n\ndecimal form: " + decimal);
 
-        /**
-         * try dropping and collecting the decimal by initializing 'decimal' as a double.
-         * if 'decinal' is a double, we type cast it to an int and add a 1
-         * not exact but i think i know where i'm going
-         */
-
         String binValue = "";
         int remainder;
 
+        // put into an array to pad zeros (make binary number into 8-bit)
 
        while (decimal > 0) {
                remainder = decimal % 2;
@@ -129,7 +129,18 @@ public class BinaryNumSystem {
                decimal = decimal / 2;
 
        }
+        /**
+         *  possibly store this answer in an array AFTER, then add leading 0s in any empty spaces
+         *  seperate digits and store into array, fill in remaining empty leading values of array with 0s
+         *  we'll need to input the array digits backwards
+         *  for loop??
+         */
+
+
         System.out.print(binValue + "\n\n");
+
+
+
 
     }
 
@@ -176,7 +187,11 @@ public class BinaryNumSystem {
          * check, while loc is greater than 0, (while there's still locations avaliable)
          *increment, decrease number location to parse backwards.
          */
-        int bConv = 0; //declare and initalize BEFORE loop
+        int bConv = 0; //declare and initalize BEFORE loop to be printed outside loop
+
+        /**
+         * put checks in place that assure only binary numbers are being inputted,
+         */
 
         for (int loc = size - 1; loc >= 0; loc--) {
             //substring - takes one letter
